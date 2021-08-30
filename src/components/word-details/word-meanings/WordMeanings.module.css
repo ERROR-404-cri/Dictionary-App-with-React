@@ -1,0 +1,28 @@
+.pTag {
+  background-color: #fbedca;
+  border-radius: 12px;
+  padding: 10px 10px;
+  text-transform: capitalize;
+}
+.definition {
+  background-color: #fff2f2;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 10px 0;
+  box-shadow: 2px 2px 10px #c489ff;
+}
+.lineHeight {
+  margin: 10px auto;
+}
+.subHeading {
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+.meaning {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.handDown {
+  font-size: 20px;
+}

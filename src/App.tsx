@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import styles from "./App.module.css";
+import SearchBar from "./components/search-bar/SearchBar";
+import WordMain from "./components/word-details/WordMain";
+import { ResponseModel } from "./models/Response.model";
 
 function App() {
+  const [DictionaryData, setDictionaryData] = useState({});
+
+  function passDictionaryData(data: ResponseModel) {
+    setDictionaryData(data);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <p id="first" className={`${styles.textCenter} ${styles.heading}`}>
+        Word Dictionary App
+      </p>
+      <SearchBar passDataFun={passDictionaryData} />
+      {Object.keys(DictionaryData).length > 0 ? (
+        <WordMain Data={DictionaryData} />
+      ) : (
+        ""
+      )}
+      <a href="#first" className={styles.goToTop}>
+        Top
+      </a>
     </div>
   );
 }
